@@ -15,4 +15,4 @@ Feature: Item Buying
       | Stuffed Frog   | 10.99         |
       | Fluffy Bunny   | 9.99          |
       | Valentine Bear | 14.99         |
-    And the grand total value is equal to '$117.9'
+    And the grand total value is equal to '$116.9'

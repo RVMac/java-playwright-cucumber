@@ -5,7 +5,7 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
 
 public class GlobalPage {
-    private Page page;
+    private final Page page;
 
     private final Locator NavShop;
     private final Locator NavContact;

@@ -12,12 +12,37 @@ public class PlaywrightFactory {
         return page;
     }
 
-    public static void initializeBrowser() {
+    public static void initializeBrowser(String browserName) {
         playwright = Playwright.create();
-        browser = playwright.chromium().launch(new BrowserType.LaunchOptions()
-//                                                    .setHeadless(true)
-//                                                    .setSlowMo(100)
-                                                );
+
+        boolean isHeadless = true;
+
+        switch (browserName){
+            case "firefox":
+                browser = playwright.firefox().launch(
+                        new BrowserType.LaunchOptions()
+                                .setHeadless(isHeadless)
+                                .setSlowMo(100)
+                );
+                break;
+            case "edge":
+                browser = playwright.chromium().launch(
+                        new BrowserType.LaunchOptions()
+                                .setHeadless(isHeadless)
+                                .setSlowMo(100)
+                                .setChannel("msedge")
+                );
+                break;
+            case "chromium":
+            default:
+                browser = playwright.chromium().launch(
+                        new BrowserType.LaunchOptions()
+                                .setHeadless(isHeadless)
+                                .setSlowMo(100)
+                );
+
+        }
+
         context = browser.newContext();
         page = context.newPage();
     }

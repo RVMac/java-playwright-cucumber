@@ -50,4 +50,26 @@
 
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>chromium</id>
+            <properties>
+                <browser>chromium</browser>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>firefox</id>
+            <properties>
+                <browser>firefox</browser>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>edge</id>
+            <properties>
+                <browser>edge</browser>
+            </properties>
+        </profile>
+    </profiles>
 </project>

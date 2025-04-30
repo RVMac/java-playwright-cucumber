@@ -12,7 +12,8 @@ public class Hooks {
 
     @Before
     public void setUp() {
-        PlaywrightFactory.initializeBrowser();
+        String browserName = System.getProperty("browser", "chromium");
+        PlaywrightFactory.initializeBrowser(browserName);
     }
 
     @After

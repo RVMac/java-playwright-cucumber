@@ -36,5 +36,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      - name: Run Tests
+      - name: Run Tests On Chromium
         run: mvn clean test
+
+      - name: Run Tests On Firefox
+        run: mvn clean test -Dbrowser=firefox
+
+      - name: Run Tests On MS Edge
+        run: mvn clean test -Dbrowser=edge
